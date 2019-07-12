@@ -4,7 +4,7 @@ require('dotenv').config();
 const app = express();
 app.use(express.json());
 
-const { getAllProducts } = require('./controller.');
+const { getAllProducts, addProduct } = require('./controller.');
 
 const {CONNECTION_STRING, SERVER_PORT} = process.env;
 
@@ -15,6 +15,8 @@ massive(CONNECTION_STRING).then(database => {
 
 
 app.get('/api/inventory/', getAllProducts );
+
+app.post('/api/product/', addProduct);
 
 
 
