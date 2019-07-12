@@ -15,21 +15,21 @@ export default class Form extends Component {
 
 
 
-    handleProductImage(productImage){
+    handleProductImage(value){
         this.setState({
-            productImage: productImage
+            productImage: value
         });
     }
 
-    handleProductName(productName){
+    handleProductName(value){
         this.setState({
-            productName: productName
+            productName: value
         });
     }
 
-    handleProductPrice(productPrice){
+    handleProductPrice(value){
         this.setState({
-            productPrice: productPrice
+            productPrice: value
         });
     }
 
@@ -41,6 +41,8 @@ export default class Form extends Component {
         })
         
     }
+
+  
 
     render(){
         return (

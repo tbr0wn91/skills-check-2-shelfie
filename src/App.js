@@ -9,7 +9,22 @@ class App extends Component {
     super(props)
 
     this.state = {
-
+      inventoryList: [{
+        name: "dress shoes",
+        price: 25,
+        img: 'https://s7d4.scene7.com/is/image/JCPenney/DP0511201717035641M.tif?wid=350&hei=350&op_usm=.4,.8,0,0&resmode=sharp2'
+      },
+      {
+        name: "dress shoes",
+        price: 25,
+        img: 'https://s7d4.scene7.com/is/image/JCPenney/DP0511201717035641M.tif?wid=350&hei=350&op_usm=.4,.8,0,0&resmode=sharp2'
+      },
+      {
+        name: "dress shoes",
+        price: 25,
+        img: 'https://s7d4.scene7.com/is/image/JCPenney/DP0511201717035641M.tif?wid=350&hei=350&op_usm=.4,.8,0,0&resmode=sharp2'
+      }
+    ]
     }
   }
 
@@ -17,7 +32,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <Dashboard />
+        <Dashboard inventoryList={this.state.inventoryList}/>
         <Form />
         <Header />
 

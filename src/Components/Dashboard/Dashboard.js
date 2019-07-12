@@ -3,10 +3,16 @@ import Product from '../Product/Product';
 
 export default class Dashboard extends Component {
     render(){
+
+       const inventoryToDisplay = this.props.inventoryList.map(inventory => {
+            return <div><Product></Product></div>
+        })
         return (
             <div>
-                Dashboard Component
+                Dashboard 
                 <Product />
+                {inventoryToDisplay}
+                
             </div>
         )
     }
