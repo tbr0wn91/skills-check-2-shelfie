@@ -16,5 +16,25 @@ module.exports = {
         database.create_product([name, price, img]).then(products => {
             res.status(200).send(products)
         }).catch(err => console.log(`couldn't add product`, err))
+    },
+
+    deleteProduct: (req, res, next) => {
+        console.log("delete endpoint hit")
+        const database = req.app.get('database');
+        const { id } = req.params;
+
+        database.delete_product(id)
+        .then((product) => res.send(product))
+
+    },
+
+    updateProduct: (req, res, next) => {
+        console.log("update endpoint hit")
+        const database = req.app.get('database');
+        const { params, query} = req;
+
+        database.update_product([params.id, query.price])
+        .then( (product) => res.send(product))
+        
     }
 }
